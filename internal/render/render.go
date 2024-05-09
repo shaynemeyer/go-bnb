@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 
 	"github.com/justinas/nosurf"
-	"github.com/shaynemeyer/go-bnb/pkg/config"
-	"github.com/shaynemeyer/go-bnb/pkg/models"
+	"github.com/shaynemeyer/go-bnb/internal/config"
+	"github.com/shaynemeyer/go-bnb/internal/models"
 )
 
 var app *config.AppConfig

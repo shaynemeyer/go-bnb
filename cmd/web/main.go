@@ -8,9 +8,9 @@ import (
 	"net/http"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/shaynemeyer/go-bnb/pkg/config"
-	"github.com/shaynemeyer/go-bnb/pkg/handlers"
-	"github.com/shaynemeyer/go-bnb/pkg/render"
+	"github.com/shaynemeyer/go-bnb/internal/config"
+	"github.com/shaynemeyer/go-bnb/internal/handlers"
+	"github.com/shaynemeyer/go-bnb/internal/render"
 )
 
 const portNumber = ":8080"
