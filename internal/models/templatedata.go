@@ -1,5 +1,7 @@
 package models
 
+import "github.com/shaynemeyer/go-bnb/internal/forms"
+
 // TemplateData - holds data sent to handlers
 type TemplateData struct {
 	StringMap map[string]string
@@ -10,4 +12,5 @@ type TemplateData struct {
 	Flash     string
 	Warning   string
 	Error     string
+	Form      *forms.Form
 }
