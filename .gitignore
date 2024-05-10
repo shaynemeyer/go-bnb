@@ -6,3 +6,9 @@
 
 # MacOS
 .DS_Store
+
+# exclude binaries
+go-bnb
+
+# exclude coverage output files
+coverage.out
