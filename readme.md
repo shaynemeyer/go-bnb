@@ -17,4 +17,5 @@ go run ./cmd/web
 - [Chi Router](https://github.com/go-chi/chi) - Application Router
 - [nosurf](https://github.com/justinas/nosurf) - CSRF Tokens
 - [SCS: HTTP Session Management for Go](https://github.com/alexedwards/scs) - Session Management
+- [`govalidator`](https://github.com/asaskevich/govalidator) - 
 - 
