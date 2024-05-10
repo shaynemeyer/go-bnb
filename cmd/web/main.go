@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
 	"log"
 	"time"
@@ -10,6 +11,7 @@ import (
 	"github.com/alexedwards/scs/v2"
 	"github.com/shaynemeyer/go-bnb/internal/config"
 	"github.com/shaynemeyer/go-bnb/internal/handlers"
+	"github.com/shaynemeyer/go-bnb/internal/models"
 	"github.com/shaynemeyer/go-bnb/internal/render"
 )
 
@@ -21,6 +23,8 @@ var session *scs.SessionManager
 // Home is the home page handler
 
 func main() {
+	// what am I going to put in the session
+	gob.Register(models.Reservation{})
 
 	// change this to true when running in production
 	app.InProduction = false
