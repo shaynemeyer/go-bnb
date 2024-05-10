@@ -10,6 +10,15 @@ A demo application for a system that manages a small Bed & Breakfast.
 go run ./cmd/web 
 ```
 
+## Running tests
+
+```shell
+go test -v     
+go test -cover
+go test -coverprofile=coverage.out && go tool cover -html=coverage.out
+```
+
+
 ---
 
 ## Dependencies
