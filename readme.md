@@ -18,6 +18,11 @@ go test -cover
 go test -coverprofile=coverage.out && go tool cover -html=coverage.out
 ```
 
+### Run all tests
+
+```shell
+go test -v ./...
+```
 
 ---
 
