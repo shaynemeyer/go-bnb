@@ -4,6 +4,7 @@ import (
 	"encoding/gob"
 	"fmt"
 	"log"
+	"os"
 	"time"
 
 	"net/http"
@@ -11,6 +12,7 @@ import (
 	"github.com/alexedwards/scs/v2"
 	"github.com/shaynemeyer/go-bnb/internal/config"
 	"github.com/shaynemeyer/go-bnb/internal/handlers"
+	"github.com/shaynemeyer/go-bnb/internal/helpers"
 	"github.com/shaynemeyer/go-bnb/internal/models"
 	"github.com/shaynemeyer/go-bnb/internal/render"
 )
@@ -19,6 +21,8 @@ const portNumber = ":8080"
 
 var app config.AppConfig
 var session *scs.SessionManager
+var infoLog *log.Logger
+var errorLog *log.Logger
 
 // Home is the home page handler
 
@@ -63,9 +67,16 @@ func run() error {
 	app.TemplateCache = tc
 	app.UseCache = false
 
+	infoLog = log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
+	app.InfoLog = infoLog
+
+	errorLog = log.New(os.Stdout, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
+	app.ErrorLog = errorLog
+
 	repo := handlers.NewRepo(&app)
 	handlers.NewHandlers(repo)
 	render.NewTemplates(&app)
+	helpers.NewHelpers(&app)
 
 	return nil
 }
