@@ -12,3 +12,5 @@ go-bnb
 
 # exclude coverage output files
 coverage.out
+
+database.yml
